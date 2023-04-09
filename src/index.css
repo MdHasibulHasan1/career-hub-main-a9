@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.btn-primary{
+  @apply  transition duration-200  shadow-md  md:mb-0  p-1 md:px-2 md:py-1  text-lg rounded border-transparent border-2  text-white hover:bg-blue-400 bg-blue-700 
+}
+
+.btn-outlined{
+  @apply  font-medium  transition duration-200  shadow-md  md:mb-0  px-4 py-2 md:px-8 md:py-3 m-2 text-lg rounded-full  text-gray-700 hover:bg-cyan-400 hover:border-transparent border-2 border-cyan-200
+}
