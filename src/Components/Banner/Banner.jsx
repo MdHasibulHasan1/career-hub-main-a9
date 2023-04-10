@@ -2,8 +2,8 @@ import React from "react";
 import personImg from "../../assets/All Images/P3OLGJ1 copy 1.png";
 const Banner = () => {
   return (
-    <div className="md:flex items-center md:h-80 py-3 bg-violet-100 p-4">
-      <div>
+    <div className="md:flex items-center md:items-end lg:max-h-64 bg-violet-100 px-4">
+      <div className="md:pb-3">
         <h1 className="font-bold text-5xl my-1">
           One Step Closer To Your <br />
           <span className="text-blue-700"> Dream Job</span>
@@ -17,9 +17,9 @@ const Banner = () => {
           Get Started
         </button>
       </div>
-      <div className="w-full h-full">
+      <div className="w-full h-64">
         <img
-          className="object-cover block h-5/6 ml-auto"
+          className="object-cover block max-h-full pb-0 mb-0 ml-auto"
           src={personImg}
           alt=""
         />

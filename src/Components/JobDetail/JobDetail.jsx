@@ -1,5 +1,5 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import { addToDb } from "../../utilities/fakedb";
 import phone from "../../assets/Icons/Frame-2.png";
 import email from "../../assets/Icons/Frame-3.png";
@@ -9,6 +9,16 @@ import jobIcon from "../../assets/Icons/Frame-1.png";
 
 const JobDetail = () => {
   const jobDetail = useLoaderData();
+  const { Id } = useParams();
+  console.log(Id);
+  console.log(jobDetail);
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const found = jobDetail.find((jD) => jD.id == Id);
+    setData(found);
+  }, [Id]);
+
   const {
     company_logo,
     job_title,
@@ -23,9 +33,30 @@ const JobDetail = () => {
     educational_requirements,
     experiences,
     contact_information,
-  } = jobDetail;
-  const handleAppliedJob = (jobDetail) => {
-    addToDb(jobDetail.id);
+  } = data;
+
+  //   const [data, setData] = useState(null);
+
+  //   useEffect(() => {
+  //     async function fetchData() {
+  //       const response = await fetch('data.json');
+  //       const jsonData = await response.json();
+
+  //       // Find the object with the matching id
+  //       const object = jsonData.find(item => item.id === id);
+
+  //       setData(object);
+  //     }
+
+  //     fetchData();
+  //   }, [id]);
+
+  //   if (!data) {
+  //     return <div>Loading...</div>;
+  //   }
+
+  const handleAppliedJob = (data) => {
+    addToDb(data.id);
   };
 
   //   const handleAppliedJob=(jobDetail)=>{
@@ -107,7 +138,7 @@ const JobDetail = () => {
           </div>
           <button
             type="button"
-            onClick={() => handleAppliedJob(jobDetail)}
+            onClick={() => handleAppliedJob(data)}
             className="btn-primary w-full mx-auto my-3"
           >
             Apply Now
