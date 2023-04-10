@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { addToDb } from "../../utilities/fakedb";
 import phone from "../../assets/Icons/Frame-2.png";
@@ -6,12 +6,16 @@ import email from "../../assets/Icons/Frame-3.png";
 import address from "../../assets/Icons/Frame-4.png";
 import salaryIcon from "../../assets/Icons/Frame.png";
 import jobIcon from "../../assets/Icons/Frame-1.png";
+import { JobsContext } from "../../App";
 
 const JobDetail = () => {
+  //
+  const [detail, setDetail] = useState([]);
+
+  const allJobs = useContext(JobsContext || []);
   const jobDetail = useLoaderData();
   const { Id } = useParams();
-  console.log(Id);
-  console.log(jobDetail);
+
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -35,50 +39,30 @@ const JobDetail = () => {
     contact_information,
   } = data;
 
-  //   const [data, setData] = useState(null);
-
-  //   useEffect(() => {
-  //     async function fetchData() {
-  //       const response = await fetch('data.json');
-  //       const jsonData = await response.json();
-
-  //       // Find the object with the matching id
-  //       const object = jsonData.find(item => item.id === id);
-
-  //       setData(object);
-  //     }
-
-  //     fetchData();
-  //   }, [id]);
-
-  //   if (!data) {
-  //     return <div>Loading...</div>;
-  //   }
-
   const handleAppliedJob = (data) => {
+    let newCart = [];
+    newCart.push(data);
+    // newCart = [...detail, data];
+
+    // if product doesn't exist in the cart, then set quantity = 1
+    // if exist update quantity by 1
+    // const exists = detail.find((de) => de.id === data.id);
+    // if (!exists) {
+    //   data.quantity = 1;
+    //   newCart = [...detail, data];
+    // } else {
+    //   exists.quantity = exists.quantity + 1;
+    //   const remaining = detail.find((de) => de.id !== data.id);
+    //   newCart = [...remaining, exists];
+    // }
+
+    setDetail(...newCart);
+
     addToDb(data.id);
+    console.log(data);
   };
+  console.log(detail);
 
-  //   const handleAppliedJob=(jobDetail)=>{
-  //     let newCart = []
-  //     const exists = cart.find(
-  //       existingProduct => existingProduct.id === product.id
-  //     )
-  //     if (!exists) {
-  //       product.quantity = 1
-  //       newCart = [...cart, product]
-  //     } else {
-  //       const rest = cart.filter(
-  //         existingProduct => existingProduct.id !== product.id
-  //       )
-  //       exists.quantity = exists.quantity + 1
-  //       newCart = [...rest, exists]
-  //     }
-
-  //     setCart(newCart)
-  //     addToDb(product.id)
-
-  //   }
   return (
     <div>
       <div className="addBackground addBg -mt-16 h-64 bg-violet-100">

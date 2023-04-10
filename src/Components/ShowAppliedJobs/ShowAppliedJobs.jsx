@@ -12,7 +12,7 @@ const ShowAppliedJobs = ({ job }) => {
     salary,
     id,
   } = job;
-  console.log(job);
+
   return (
     <div className="border-2 border-gray-900  p-4 md:flex grid grid-cols-1  gap-3 items-center">
       <div className="bg-slate-100 w-3/12 h-full md:p-6  lg:p-12">
