@@ -24,7 +24,7 @@ const Home = () => {
     <div>
       <div>
         <Banner></Banner>
-        <h1 className="text-3xl font-medium mt-6">Job Category List</h1>
+        <h1 className="text-3xl font-medium mt-6 my-3">Job Category List</h1>
         <p>
           Explore thousands of job opportunities with all the information you
           need. Its your future
@@ -37,8 +37,8 @@ const Home = () => {
       </div>
 
       <div>
-        <h1 className="text-3xl font-medium">Featured Jobs</h1>
-        <p>
+        <h1 className="text-3xl my-3 font-medium">Featured Jobs</h1>
+        <p className="mb-6 ">
           Explore thousands of job opportunities with all the information you
           need. Its your future
         </p>

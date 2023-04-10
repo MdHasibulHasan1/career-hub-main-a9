@@ -8,8 +8,16 @@ const AppliedJobs = () => {
   const [jobs, setJobs] = useState(savedJob);
 
   const handleOnsite = () => {
-    const Onsite = jobs.filter((job) => (job.remote_or_onsite = "Onsite"));
+    const Onsite = jobs.filter((job) => job.remote_or_onsite === "Onsite");
     setJobs(Onsite);
+  };
+  const handleRemote = () => {
+    const remote = jobs.filter((job) => job.remote_or_onsite === "Remote");
+    if (!remote) {
+      setJobs(savedJob);
+    } else {
+      setJobs(remote);
+    }
   };
 
   return (
@@ -26,7 +34,7 @@ const AppliedJobs = () => {
             <li onClick={handleOnsite}>
               <a>Show Onsite</a>
             </li>
-            <li>
+            <li onClick={handleRemote}>
               <a>Show Remote</a>
             </li>
           </ul>

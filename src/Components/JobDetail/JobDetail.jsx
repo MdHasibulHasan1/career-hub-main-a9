@@ -27,6 +27,7 @@ const JobDetail = () => {
   const handleAppliedJob = (jobDetail) => {
     addToDb(jobDetail.id);
   };
+
   //   const handleAppliedJob=(jobDetail)=>{
   //     let newCart = []
   //     const exists = cart.find(

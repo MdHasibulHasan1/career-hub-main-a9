@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import salaryIcon from "../../assets/Icons/Frame.png";
+import locationIcon from "../../assets/Icons/Location Icon.png";
 const Job = ({ job }) => {
   const {
     company_logo,
@@ -25,13 +26,13 @@ const Job = ({ job }) => {
           {fulltime_or_parttime}
         </h3>
       </div>
-      <div className="flex gap-2">
-        <div className="flex gap-2">
-          {/* <img src="" alt="" /> */}
+      <div className="flex gap-2 my-2 items-center">
+        <div className="flex items-center">
+          <img className="w-4 h-4 block" src={locationIcon} alt="" />
           <h3>{location}</h3>
         </div>
-        <div className="flex gap-2">
-          {/* <img src="Frame.png" alt="" /> */}
+        <div className="flex items-center">
+          <img className="w-4 h-4 block" src={salaryIcon} alt="" />
           <h3>{salary}</h3>
         </div>
       </div>
