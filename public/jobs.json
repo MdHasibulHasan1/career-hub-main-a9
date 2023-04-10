@@ -1,6 +1,6 @@
 [
       {
-        "id": 1,
+        "id": "01",
         "company_logo": "../src/assets/Logo/google-1-1 1-1.png",
         "job_title": "Software Engineer",
         "company_name": "Google LLC",
@@ -18,7 +18,7 @@
         }
       },
       {
-        "id": 2,
+        "id": "02",
         "company_logo": "../src/assets/Logo/google-1-1 1.png",
         "job_title": "Product Manager",
         "company_name": "Netflix",
@@ -36,7 +36,7 @@
         }
       },
       {
-        "id": 3,
+        "id": "03",
         "company_logo": "../src/assets/Logo/netflix-4 1.png",
         "job_title": "Data Scientist",
         "company_name": "Tesla",
@@ -54,7 +54,7 @@
         }
     },
     {
-        "id": 4,
+        "id": "04",
         "company_logo": "../src/assets/Logo/tesla-9 1.png",
         "job_title": "Marketing Manager",
         "company_name": "Example Inc.",
@@ -72,7 +72,7 @@
         }
       },
       {
-        "id": 5,
+        "id": "05",
         "company_logo": "../src/assets/Logo/google-1-1 1-1.png",
         "job_title": "Sales Representative",
         "company_name": "Example Inc.",
@@ -89,7 +89,7 @@
           "email": "jobs@example.com"
         }
       },{
-        "id": 6,
+        "id": "06",
         "company_logo": "../src/assets/Logo/google-1-1 1-1.png",
         "job_title": "Sales Representative",
         "company_name": "Example Inc.",
@@ -107,7 +107,7 @@
         }
       },
       {
-        "id": 7,
+        "id": "07",
         "company_logo": "../src/assets/Logo/google-1-1 1-1.png",
         "job_title": "Accountant",
         "company_name": "Example Inc.",
@@ -125,7 +125,7 @@
         }
       },
       {
-        "id": 8,
+        "id": "08",
         "company_logo": "../src/assets/Logo/google-1-1 1-1.png",
         "job_title": "Human Resources Manager",
         "company_name": "Example Inc.",

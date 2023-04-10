@@ -1,0 +1,18 @@
+{
+    "id": "05",
+    "company_logo": "../src/assets/Logo/google-1-1 1-1.png",
+    "job_title": "Sales Representative",
+    "company_name": "Example Inc.",
+    "remote_or_onsite": "Remote",
+    "location": "Chicago, IL",
+    "fulltime_or_parttime": "Part-time",
+    "salary": "Commission-based",
+    "job_description": "Example Inc. is seeking a sales representative to join our team...",
+    "job_responsibility": "Responsibilities include generating leads and closing sales...",
+    "educational_requirements": "High school diploma or equivalent",
+    "experiences": "2+ years of experience in sales",
+    "contact_information": {
+      "phone": "123-456-7890",
+      "email": "jobs@example.com"
+    }
+  }

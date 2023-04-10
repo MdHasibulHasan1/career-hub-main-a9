@@ -1,0 +1,18 @@
+{
+    "id": "08",
+    "company_logo": "../src/assets/Logo/google-1-1 1-1.png",
+    "job_title": "Human Resources Manager",
+    "company_name": "Example Inc.",
+    "remote_or_onsite": "Onsite",
+    "location": "Washington, DC",
+    "fulltime_or_parttime": "Full-time",
+    "salary": "110,000 - 140,000 USD",
+    "job_description": "Example Inc. is seeking a human resources manager to join our team...",
+    "job_responsibility": "Responsibilities include managing employee relations...",
+    "educational_requirements": "Bachelor's degree in human resources or related field",
+    "experiences": "5+ years of experience in human resources",
+    "contact_information": {
+      "phone": "123-456-7890",
+      "email": "jobs@example.com"
+    }
+  }
