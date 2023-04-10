@@ -2,7 +2,7 @@ import React from "react";
 import personImg from "../../assets/All Images/P3OLGJ1 copy 1.png";
 const Banner = () => {
   return (
-    <div className="md:flex items-center bg-violet-100">
+    <div className="md:flex items-center md:h-80 py-3 bg-violet-100 p-4">
       <div>
         <h1 className="font-bold text-5xl my-1">
           One Step Closer To Your <br />
@@ -17,8 +17,12 @@ const Banner = () => {
           Get Started
         </button>
       </div>
-      <div>
-        <img src={personImg} alt="" />
+      <div className="w-full h-full">
+        <img
+          className="object-cover block h-5/6 ml-auto"
+          src={personImg}
+          alt=""
+        />
       </div>
     </div>
   );

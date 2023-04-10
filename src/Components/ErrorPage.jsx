@@ -6,7 +6,7 @@ const ErrorPage = () => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1);
+    navigate("/");
   };
   return (
     <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">

@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
   return (
-    <div className="flex items-center bg-violet-100">
+    <div className="flex items-center p-4 bg-violet-100">
       <div className="text-left font-semibold text-3xl">
         <NavLink to="/">CareerBoost</NavLink>
       </div>

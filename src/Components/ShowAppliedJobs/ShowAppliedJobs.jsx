@@ -14,11 +14,11 @@ const ShowAppliedJobs = ({ job }) => {
   } = job;
   console.log(job);
   return (
-    <div className="border-2 border-gray-900  p-4 flex gap-3 items-center">
-      <div className="bg-slate-100 w-3/12  h-44 flex items-center p-6">
-        <img className="w-6/12 mx-auto  block" src={company_logo} alt="" />
+    <div className="border-2 border-gray-900  p-4 md:flex grid grid-cols-1  gap-3 items-center">
+      <div className="bg-slate-100 w-3/12 h-full md:p-6  lg:p-12">
+        <img className="w-40 mx-auto block" src={company_logo} alt="" />
       </div>
-      <div className="grow">
+      <div className="md:w-6/12">
         <h3>{job_title}</h3>
         <h3>{company_name}</h3>
         <div className="flex gap-3 items-center">
@@ -29,7 +29,7 @@ const ShowAppliedJobs = ({ job }) => {
             {fulltime_or_parttime}
           </h3>
         </div>
-        <div className="flex items-center mt-2 gap-3">
+        <div className="flex flex-wrap  items-center my-2 gap-3">
           <h3 className="flex h-4 items-center">
             <img className="w-4" src={addressIcon} alt="" />
             {location}
@@ -40,7 +40,7 @@ const ShowAppliedJobs = ({ job }) => {
           </h3>
         </div>
       </div>
-      <div>
+      <div className="md:w-3/12">
         <button type="button" className="btn-primary">
           View Details
         </button>
