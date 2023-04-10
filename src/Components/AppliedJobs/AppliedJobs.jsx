@@ -23,7 +23,7 @@ const AppliedJobs = () => {
   return (
     <div className="">
       <div className="addBackground addBg -mt-16 h-64 bg-violet-100">
-        <h3 className="text-3xl font-bold pt-20">Job Details</h3>
+        <h3 className="text-3xl font-bold pt-20">Applied Jobs</h3>
       </div>
       <div className="md:w-8/12 p-4 mx-auto">
         <div>

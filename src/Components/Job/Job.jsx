@@ -38,7 +38,7 @@ const Job = ({ job }) => {
       </div>
 
       <button type="button" className="btn-primary">
-        <Link to={`/jobs/${id}`}>View Details</Link>
+        <Link to={`/job/${id}`}>View Details</Link>
       </button>
     </div>
   );
