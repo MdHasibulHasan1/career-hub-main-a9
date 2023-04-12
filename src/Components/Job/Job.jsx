@@ -18,17 +18,17 @@ const Job = ({ job }) => {
       <img src={company_logo} alt="" />
       <h2 className="font-bold">{job_title}</h2>
       <h3>{company_name}</h3>
-      <div className="flex gap-3 items-center">
-        <h3 className="border-2 inline text-blue-600 px-2 py-1 mt-2 border-blue-700">
+      <div className="flex gap-2 items-center">
+        <h3 className="border-2 inline text-blue-600 px-2 mr-3 md:mr-0 py-1 mt-2 border-blue-700">
           {remote_or_onsite}
         </h3>
         <h3 className="border-2 inline text-blue-600 px-2 py-1 mt-2 border-blue-700">
           {fulltime_or_parttime}
         </h3>
       </div>
-      <div className="flex gap-2 my-2 items-center">
+      <div className="md:flex gap-4 md:gap-2  my-2 items-center">
         <div className="flex items-center">
-          <img className="w-4 h-4 block" src={locationIcon} alt="" />
+          <img className="w-4  h-4 block" src={locationIcon} alt="" />
           <h3>{location}</h3>
         </div>
         <div className="flex items-center">

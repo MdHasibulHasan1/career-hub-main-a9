@@ -2,9 +2,9 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="text-left">
+    <div className="text-left text-lg pb-20 px-3  bg-violet-100">
       <div>
-        <h3 className="font-semibold text-2xl my-1">
+        <h3 className="font-semibold text-2xl px-3 rounded-sm my-1 bg-blue-600 text-white">
           1. When should you use context API?
         </h3>
         <p>
@@ -16,7 +16,7 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h3 className="font-semibold text-2xl my-1">
+        <h3 className="font-semibold text-2xl my-1 px-3 rounded-sm bg-blue-600 text-white">
           2. What is a custom hook?
         </h3>
         <p>
@@ -27,7 +27,9 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h3 className="font-semibold text-2xl my-1">3. What is useRef?</h3>
+        <h3 className="font-semibold px-3 rounded-sm text-2xl my-1 bg-blue-600 text-white">
+          3. What is useRef?
+        </h3>
         <p>
           useRef is a hook in React that returns a mutable ref object. It can be
           used to access DOM nodes or to hold any mutable value that you want to
@@ -35,7 +37,9 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h3 className="font-semibold text-2xl my-1">4. What is useMemo?</h3>
+        <h3 className="font-semibold px-3 rounded-sm text-2xl my-1 bg-blue-600 text-white">
+          4. What is useMemo?
+        </h3>
         <p>
           useMemo is a hook in React that is used for performance optimization.
           It memoizes the result of a function so that it is only recalculated

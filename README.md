@@ -1,13 +1,13 @@
-# CareerBoost Repository
+## CareerBoost Repository
 
 CareerBoost is a professional networking site that allows you to search for jobs and apply directly through the platform based on your skills and interests.
 
 ## Here are some of its best features:
 
-1. You can see full details of any Job.
-2. You can find Jobs based on your skills and interests.
-3. You can apply for multiple jobs if you are interested.
-4. you can also see your all Applied Jobs
+- You can find Jobs based on your skills and interests.
+- You can apply for multiple jobs if you are interested.
+- you can also see your all Applied Jobs
+- You can see full details of any Job.
 
 ## Live Link
 

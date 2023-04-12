@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { addToDb } from "../../utilities/fakedb";
 import phone from "../../assets/Icons/Frame-2.png";
@@ -6,16 +6,10 @@ import email from "../../assets/Icons/Frame-3.png";
 import address from "../../assets/Icons/Frame-4.png";
 import salaryIcon from "../../assets/Icons/Frame.png";
 import jobIcon from "../../assets/Icons/Frame-1.png";
-import { AppliedJobsContext, JobsContext } from "../../App";
 import SetBanner from "../SetBanner/SetBanner";
 const JobDetail = () => {
-  //
-  const [detail, setDetail] = useState([]);
-  const [appliedJobs, setAppliedJobs] = useContext(AppliedJobsContext || []);
-  const allJobs = useContext(JobsContext || []);
   const jobDetail = useLoaderData();
   const { Id } = useParams();
-
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -40,29 +34,13 @@ const JobDetail = () => {
   } = data;
 
   const handleAppliedJob = (data) => {
-    let newJobs = [];
-    const exists = appliedJobs.find(
-      (existingProduct) => existingProduct.id === data.id
-    );
-    if (!exists) {
-      data.quantity = 1;
-      newJobs = [...appliedJobs, data];
-    } else {
-      const rest = appliedJobs.filter(
-        (existingData) => existingData.id !== data.id
-      );
-      exists.quantity = exists.quantity + 1;
-      newJobs = [...rest, exists];
-    }
-
-    setAppliedJobs(newJobs);
     addToDb(data.id);
   };
 
   return (
-    <div>
+    <div className="">
       <SetBanner>Job Details</SetBanner>
-      <div className="md:flex mt-4 text-left gap-3 mx-auto">
+      <div className="md:flex px-4 mt-4 text-left gap-3 mx-auto">
         <div className=" w-full md:w-8/12">
           <p>
             <span className="font-bold ">Job Description:</span>{" "}

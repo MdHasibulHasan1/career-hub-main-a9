@@ -1,31 +1,42 @@
-import React, { useContext, useState } from "react";
-import { AppliedJobsContext } from "../../App";
+import React, { useContext, useEffect, useState } from "react";
+import { JobsContext } from "../../App";
 import ShowAppliedJobs from "../ShowAppliedJobs/ShowAppliedJobs";
 import SetBanner from "../SetBanner/SetBanner";
 import "./AppliedJobs.css";
+import { getShoppingCart } from "../../utilities/fakedb";
 const AppliedJobs = () => {
-  const [appliedJobs, setAppliedJobs] = useContext(AppliedJobsContext || []);
-  const [jobs, setJobs] = useState(appliedJobs);
-
+  const [jobF, setJobF] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  const allJobs = useContext(JobsContext || []);
+  useEffect(() => {
+    const storedCart = getShoppingCart();
+    const savedJob = [];
+    for (const id in storedCart) {
+      const addedJob = allJobs.find((job) => job.id === id);
+      if (addedJob) {
+        const quantity = storedCart[id];
+        addedJob.quantity = quantity;
+        savedJob.push(addedJob);
+      }
+    }
+    setJobs(savedJob);
+    setJobF(savedJob);
+  }, []);
+  // Handle Onsite Jobs
   const handleOnsite = () => {
-    if (jobs.filter((job) => job.remote_or_onsite !== "Onsite")) {
-      setJobs(appliedJobs);
+    if (jobF.filter((job) => job.remote_or_onsite !== "Onsite")) {
+      setJobF(jobs);
     }
-    const Onsite = appliedJobs.filter(
-      (job) => job.remote_or_onsite === "Onsite"
-    );
-
-    setJobs(Onsite);
+    const Onsite = jobs.filter((job) => job.remote_or_onsite === "Onsite");
+    setJobF(Onsite);
   };
+  // Handle Remote Jobs
   const handleRemote = () => {
-    if (jobs.filter((job) => job.remote_or_onsite !== "Remote")) {
-      setJobs(appliedJobs);
+    if (jobF.filter((job) => job.remote_or_onsite !== "Remote")) {
+      setJobF(jobs);
     }
-    const remote = appliedJobs.filter(
-      (job) => job.remote_or_onsite === "Remote"
-    );
-
-    setJobs(remote);
+    const remote = jobs.filter((job) => job.remote_or_onsite === "Remote");
+    setJobF(remote);
   };
 
   return (
@@ -51,7 +62,7 @@ const AppliedJobs = () => {
           </div>
         </div>
         <div className="rounded text-left flex flex-col gap-4 ">
-          {jobs.map((job) => (
+          {jobF.map((job) => (
             <ShowAppliedJobs key={job.id} job={job}></ShowAppliedJobs>
           ))}
         </div>

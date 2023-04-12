@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import { JobsContext, SavedContext } from "../../App";
+import { JobsContext } from "../../App";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Job from "../Job/Job";
 
 const Home = () => {
   const allJobs = useContext(JobsContext || []);
-  const savedJob = useContext(SavedContext || []);
   const [categories, setCategories] = useState([]);
 
   const [jobs, setJobs] = useState(allJobs.slice(0, 4));
@@ -24,19 +22,21 @@ const Home = () => {
     <div>
       <div>
         <Banner></Banner>
-        <h1 className="text-3xl font-medium mt-6 my-3">Job Category List</h1>
-        <p>
-          Explore thousands of job opportunities with all the information you
-          need. Its your future
-        </p>
-        <div className="grid text-left grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-6 gap-4 justify-between">
-          {categories.map((category) => (
-            <Category key={category.id} category={category}></Category>
-          ))}
+        <div className="px-4">
+          <h1 className="text-3xl font-medium mt-6 my-3">Job Category List</h1>
+          <p>
+            Explore thousands of job opportunities with all the information you
+            need. Its your future
+          </p>
+          <div className="grid text-left grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-6 gap-4 justify-between">
+            {categories.map((category) => (
+              <Category key={category.id} category={category}></Category>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div>
+      <div className="px-4 pb-4">
         <h1 className="text-3xl my-3 font-medium">Featured Jobs</h1>
         <p className="mb-6 ">
           Explore thousands of job opportunities with all the information you

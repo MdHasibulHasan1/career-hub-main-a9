@@ -1,25 +1,25 @@
 
     [
       {
-        "logo": "../src/assets/Icons/chip 1.png",
+        "logo": "https://i.ibb.co/PjyCGZP/chip-1.png",
         "category_name": "Account & Finance",
         "jobs_available":"300 Jobs Available",
         "id":"1"
       },
       {
-        "logo": "../src/assets/Icons/Frame-4.png",
+        "logo": "https://i.ibb.co/vZFwGD8/business-1.png",
         "category_name": "Product Manager",
         "jobs_available":"600 Jobs Available",
         "id":"2"
       },
       {
-        "logo": "../src/assets/Icons/Frame-3.png",
+        "logo": "https://i.ibb.co/fNqZ0d8/Frame-1.png",
         "category_name": "Data Scientist",
         "jobs_available":"100+ Jobs Available",
         "id":"3"
       },
       {
-        "logo": "../src/assets/Icons/Frame-2.png",
+        "logo": "https://i.ibb.co/cy5x8Fn/social-media-1.png",
         "category_name": "UI Designer",
         "jobs_available":"500 Jobs Available",
         "id":"4"

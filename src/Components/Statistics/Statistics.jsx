@@ -1,76 +1,85 @@
-import "./Statistics.css";
 import React from "react";
 import {
-  AreaChart,
+  ResponsiveContainer,
+  ComposedChart,
+  Line,
   Area,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
+  Legend,
 } from "recharts";
 
 const data = [
   {
-    name: "A-01",
+    name: "A-1",
+    outOf: 60,
     mark: 58,
   },
   {
-    name: "A-02",
+    name: "A-2",
+    outOf: 60,
     mark: 59,
   },
   {
-    name: "A-03",
+    name: "A-3",
+    outOf: 60,
     mark: 60,
   },
   {
-    name: "A-04",
+    name: "A-4",
+    outOf: 60,
     mark: 60,
   },
   {
-    name: "A-05",
+    name: "A-5",
+    outOf: 60,
     mark: 60,
   },
   {
-    name: "A-06",
+    name: "A-6",
+    outOf: 60,
     mark: 60,
   },
   {
-    name: "A-07",
+    name: "A-7",
+    outOf: 60,
     mark: 60,
   },
   {
-    name: "A-08",
+    name: "A-8",
+    outOf: 60,
     mark: 60,
   },
 ];
 
-const Statistics = () => {
+export default function Statistics() {
   return (
-    <div style={{ width: "100%", height: 300 }}>
+    <div className="bg-violet-50" style={{ width: "100%", height: 300 }}>
       <ResponsiveContainer>
-        <AreaChart
+        <ComposedChart
+          width={500}
+          height={400}
           data={data}
           margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
+            top: 50,
+            right: 5,
+            bottom: 20,
+            left: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <CartesianGrid stroke="#f5f5f5" />
+          <XAxis dataKey="name" scale="band" />
           <YAxis />
           <Tooltip />
-          <Area
-            type="monotone"
-            dataKey="mark"
-            stroke="#8884d8"
-            fill="#8884d8"
-          />
-        </AreaChart>
+          <Legend />
+
+          <Bar dataKey="mark" barSize={20} fill="#413ea0" />
+          <Line type="monotone" dataKey="outOf" stroke="#ff7300" />
+        </ComposedChart>
       </ResponsiveContainer>
     </div>
   );
-};
-export default Statistics;
+}
