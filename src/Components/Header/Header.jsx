@@ -5,15 +5,15 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div>
-      <div className="px-4 bg-violet-100 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="relative flex items-center justify-between">
+      <div className="px-4 bg-violet-100  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="relative py-2 flex items-center justify-between">
           <Link
             to="/"
             aria-label="CareerBoost"
             title="CareerBoost"
             className="inline-flex items-center"
           >
-            <span className="ml-2 text-xl font-bold tracking-wide text-blue-600 ">
+            <span className="ml-2 text-2xl font-bold tracking-wide text-blue-600 ">
               CareerBoost
             </span>
           </Link>
@@ -39,13 +39,14 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/applied_jobs"
-                aria-label="applied_jobs"
-                title="Applied Jobs"
+                aria-label="applied jobs"
+                title="applied jobs"
+                className={({ isActive }) => (isActive ? "active" : "default")}
               >
                 Applied Jobs
-              </Link>
+              </NavLink>
             </li>
             <li>
               <NavLink
@@ -97,7 +98,7 @@ const Header = () => {
                         className="inline-flex items-center"
                       >
                         <div className="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-200"></div>
-                        <span className="ml-2 text-xl font-bold tracking-wide text-blue-600 uppercase">
+                        <span className="ml-2 text-2xl font-bold tracking-wide text-blue-600 uppercase">
                           CareerBoost
                         </span>
                       </Link>

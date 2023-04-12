@@ -29,7 +29,7 @@ const Home = () => {
           Explore thousands of job opportunities with all the information you
           need. Its your future
         </p>
-        <div className="grid text-left grid-cols-2 md:grid-cols-4 my-6 gap-4 justify-between">
+        <div className="grid text-left grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-6 gap-4 justify-between">
           {categories.map((category) => (
             <Category key={category.id} category={category}></Category>
           ))}
@@ -53,7 +53,7 @@ const Home = () => {
             onClick={handleShowAll}
             className="btn-primary my-3"
           >
-            show all
+            See All Jobs
           </button>
         )}
       </div>

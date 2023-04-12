@@ -4,8 +4,6 @@ export const cartProductsLoader = async () => {
     const loadedJobs = await fetch('/jobs.json')
     const allJobs = await loadedJobs.json();
 
-   
-
     const storedCart = getShoppingCart();
     const savedJob = [];
     for (const id in storedCart) {

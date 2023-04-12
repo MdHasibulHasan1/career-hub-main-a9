@@ -6,12 +6,12 @@ import email from "../../assets/Icons/Frame-3.png";
 import address from "../../assets/Icons/Frame-4.png";
 import salaryIcon from "../../assets/Icons/Frame.png";
 import jobIcon from "../../assets/Icons/Frame-1.png";
-import { JobsContext } from "../../App";
-
+import { AppliedJobsContext, JobsContext } from "../../App";
+import SetBanner from "../SetBanner/SetBanner";
 const JobDetail = () => {
   //
   const [detail, setDetail] = useState([]);
-
+  const [appliedJobs, setAppliedJobs] = useContext(AppliedJobsContext || []);
   const allJobs = useContext(JobsContext || []);
   const jobDetail = useLoaderData();
   const { Id } = useParams();
@@ -40,34 +40,28 @@ const JobDetail = () => {
   } = data;
 
   const handleAppliedJob = (data) => {
-    let newCart = [];
-    newCart.push(data);
-    // newCart = [...detail, data];
+    let newJobs = [];
+    const exists = appliedJobs.find(
+      (existingProduct) => existingProduct.id === data.id
+    );
+    if (!exists) {
+      data.quantity = 1;
+      newJobs = [...appliedJobs, data];
+    } else {
+      const rest = appliedJobs.filter(
+        (existingData) => existingData.id !== data.id
+      );
+      exists.quantity = exists.quantity + 1;
+      newJobs = [...rest, exists];
+    }
 
-    // if product doesn't exist in the cart, then set quantity = 1
-    // if exist update quantity by 1
-    // const exists = detail.find((de) => de.id === data.id);
-    // if (!exists) {
-    //   data.quantity = 1;
-    //   newCart = [...detail, data];
-    // } else {
-    //   exists.quantity = exists.quantity + 1;
-    //   const remaining = detail.find((de) => de.id !== data.id);
-    //   newCart = [...remaining, exists];
-    // }
-
-    setDetail(...newCart);
-
+    setAppliedJobs(newJobs);
     addToDb(data.id);
-    console.log(data);
   };
-  console.log(detail);
 
   return (
     <div>
-      <div className="addBackground addBg -mt-16 h-64 bg-violet-100">
-        <h3 className="text-3xl font-bold pt-20">Job Details</h3>
-      </div>
+      <SetBanner>Job Details</SetBanner>
       <div className="md:flex mt-4 text-left gap-3 mx-auto">
         <div className=" w-full md:w-8/12">
           <p>

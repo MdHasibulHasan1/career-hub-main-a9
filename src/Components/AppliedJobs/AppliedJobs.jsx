@@ -1,30 +1,36 @@
 import React, { useContext, useState } from "react";
-import { JobsContext, SavedContext } from "../../App";
+import { AppliedJobsContext } from "../../App";
 import ShowAppliedJobs from "../ShowAppliedJobs/ShowAppliedJobs";
+import SetBanner from "../SetBanner/SetBanner";
 import "./AppliedJobs.css";
 const AppliedJobs = () => {
-  const allJobs = useContext(JobsContext || []);
-  const savedJob = useContext(SavedContext || []);
-  const [jobs, setJobs] = useState(savedJob);
+  const [appliedJobs, setAppliedJobs] = useContext(AppliedJobsContext || []);
+  const [jobs, setJobs] = useState(appliedJobs);
 
   const handleOnsite = () => {
-    const Onsite = jobs.filter((job) => job.remote_or_onsite === "Onsite");
+    if (jobs.filter((job) => job.remote_or_onsite !== "Onsite")) {
+      setJobs(appliedJobs);
+    }
+    const Onsite = appliedJobs.filter(
+      (job) => job.remote_or_onsite === "Onsite"
+    );
+
     setJobs(Onsite);
   };
   const handleRemote = () => {
-    const remote = jobs.filter((job) => job.remote_or_onsite === "Remote");
-    if (!remote) {
-      setJobs(savedJob);
-    } else {
-      setJobs(remote);
+    if (jobs.filter((job) => job.remote_or_onsite !== "Remote")) {
+      setJobs(appliedJobs);
     }
+    const remote = appliedJobs.filter(
+      (job) => job.remote_or_onsite === "Remote"
+    );
+
+    setJobs(remote);
   };
 
   return (
     <div className="">
-      <div className="addBackground addBg -mt-16 h-64 bg-violet-100">
-        <h3 className="text-3xl font-bold pt-20">Applied Jobs</h3>
-      </div>
+      <SetBanner>Applied Jobs</SetBanner>
       <div className="md:w-8/12 p-4 mx-auto">
         <div>
           <div className="dropdown dropdown-bottom dropdown-end flex justify-end ">
