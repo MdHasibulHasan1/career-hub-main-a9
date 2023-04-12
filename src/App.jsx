@@ -2,6 +2,8 @@ import { createContext, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import { Outlet, useLoaderData } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+
 export const JobsContext = createContext([]);
 function App() {
   const allJobs = useLoaderData();
@@ -12,6 +14,7 @@ function App() {
 
         <Outlet></Outlet>
       </JobsContext.Provider>
+      <Toaster />
     </div>
   );
 }

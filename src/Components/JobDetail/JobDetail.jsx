@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { addToDb } from "../../utilities/fakedb";
+import { addToDb, getShoppingCart } from "../../utilities/fakedb";
 import phone from "../../assets/Icons/Frame-2.png";
 import email from "../../assets/Icons/Frame-3.png";
 import address from "../../assets/Icons/Frame-4.png";
 import salaryIcon from "../../assets/Icons/Frame.png";
 import jobIcon from "../../assets/Icons/Frame-1.png";
 import SetBanner from "../SetBanner/SetBanner";
+import toast from "react-hot-toast";
 const JobDetail = () => {
   const jobDetail = useLoaderData();
   const { Id } = useParams();
@@ -34,6 +35,12 @@ const JobDetail = () => {
   } = data;
 
   const handleAppliedJob = (data) => {
+    const storedCart = getShoppingCart();
+    for (const id in storedCart) {
+      if (id === data.id) {
+        toast.success("already Applied!");
+      }
+    }
     addToDb(data.id);
   };
 
