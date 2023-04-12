@@ -4,7 +4,7 @@ const Blog = () => {
   return (
     <div className="text-left text-lg pb-20 px-3  bg-violet-100">
       <div>
-        <h3 className="font-semibold text-2xl px-3 rounded-sm my-1 bg-blue-600 text-white">
+        <h3 className="font-semibold text-2xl px-3 py-2 rounded-sm my-1 bg-violet-50">
           1. When should you use context API?
         </h3>
         <p>
@@ -16,7 +16,7 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h3 className="font-semibold text-2xl my-1 px-3 rounded-sm bg-blue-600 text-white">
+        <h3 className="font-semibold text-2xl py-2 my-1 px-3 rounded-sm bg-violet-50">
           2. What is a custom hook?
         </h3>
         <p>
@@ -27,7 +27,7 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h3 className="font-semibold px-3 rounded-sm text-2xl my-1 bg-blue-600 text-white">
+        <h3 className="font-semibold px-3 rounded-sm  py-2 text-2xl my-1 bg-violet-50">
           3. What is useRef?
         </h3>
         <p>
@@ -37,7 +37,7 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h3 className="font-semibold px-3 rounded-sm text-2xl my-1 bg-blue-600 text-white">
+        <h3 className="font-semibold px-3 py-2 rounded-sm text-2xl my-1 bg-violet-50">
           4. What is useMemo?
         </h3>
         <p>
