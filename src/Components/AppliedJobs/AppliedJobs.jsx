@@ -5,7 +5,7 @@ import SetBanner from "../SetBanner/SetBanner";
 import "./AppliedJobs.css";
 import { getShoppingCart } from "../../utilities/fakedb";
 const AppliedJobs = () => {
-  const [jobF, setJobF] = useState([]);
+  const [jobStore, setJobStore] = useState([]);
   const [jobs, setJobs] = useState([]);
   const allJobs = useContext(JobsContext || []);
   useEffect(() => {
@@ -20,23 +20,23 @@ const AppliedJobs = () => {
       }
     }
     setJobs(savedJob);
-    setJobF(savedJob);
+    setJobStore(savedJob);
   }, []);
   // Handle Onsite Jobs
   const handleOnsite = () => {
-    if (jobF.filter((job) => job.remote_or_onsite !== "Onsite")) {
-      setJobF(jobs);
+    if (jobs.filter((job) => job.remote_or_onsite !== "Onsite")) {
+      setJobs(jobStore);
     }
-    const Onsite = jobs.filter((job) => job.remote_or_onsite === "Onsite");
-    setJobF(Onsite);
+    const onsite = jobStore.filter((job) => job.remote_or_onsite === "Onsite");
+    setJobs(onsite);
   };
   // Handle Remote Jobs
   const handleRemote = () => {
-    if (jobF.filter((job) => job.remote_or_onsite !== "Remote")) {
-      setJobF(jobs);
+    if (jobs.filter((job) => job.remote_or_onsite !== "Remote")) {
+      setJobs(jobStore);
     }
-    const remote = jobs.filter((job) => job.remote_or_onsite === "Remote");
-    setJobF(remote);
+    const remote = jobStore.filter((job) => job.remote_or_onsite === "Remote");
+    setJobs(remote);
   };
 
   return (
@@ -62,7 +62,7 @@ const AppliedJobs = () => {
           </div>
         </div>
         <div className="rounded text-left flex flex-col gap-4 ">
-          {jobF.map((job) => (
+          {jobs.map((job) => (
             <ShowAppliedJobs key={job.id} job={job}></ShowAppliedJobs>
           ))}
         </div>
